@@ -20,7 +20,12 @@ public class movimiento : MonoBehaviour
     double nextFireTime = 0;
      public GameObject initialMap;
 
-      void Awake()
+    [Tooltip("Puntos de vida")]
+    public int maxHp = 10;
+    [Tooltip("Vida actual")]
+    public int hp;
+
+    void Awake()
        {
            Assert.IsNotNull(initialMap);
        }
@@ -37,6 +42,7 @@ public class movimiento : MonoBehaviour
         attackCollider.enabled = false;
 
           Camera.main.GetComponent<MainCamera>().SetBound(initialMap);
+        hp = maxHp;
     }
 
     void Update()
@@ -149,9 +155,35 @@ public class movimiento : MonoBehaviour
         yield return new WaitForSeconds(seconds);
         movePrevent = false;
     }
-  /*  IEnumerator EnableShootingAfter(float seconds)
+    public void Attacked()
     {
-        yield return new WaitForSeconds(seconds);
-        shootPrevent = false;
-    }*/
+        if (--hp <= 0) Destroy(gameObject);
+    }
+
+    ///---  Dibujamos las vidas del enemigo en una barra 
+    void OnGUI()
+    {
+        // Guardamos la posición del enemigo en el mundo respecto a la cámara
+        Vector2 pos = Camera.main.WorldToScreenPoint(transform.position);
+
+        // Dibujamos el cuadrado debajo del enemigo con el texto
+        GUI.Box(
+            new Rect(
+                pos.x - 20,                   // posición x de la barra
+                Screen.height - pos.y + 60,   // posición y de la barra
+                40,                           // anchura de la barra    
+                24                            // altura de la barra  
+            ), hp + "/" + maxHp               // texto de la barra
+        );
+       /* GUI.Box(
+            new Rect(
+                pos.x - 100,                   // posición x de la barra
+                Screen.height - pos.y + 200,   // posición y de la barra
+                80,                           // anchura de la barra    
+                30                            // altura de la barra  
+            ), "puntos"                // texto de la barra
+        );*/
+    }
+  
+    
 }

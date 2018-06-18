@@ -39,6 +39,7 @@ public class Rock : MonoBehaviour
         // Si chocamos contra el jugador o un ataque la borramos
         if (col.transform.tag == "Player" || col.transform.tag == "Attack")
         {
+            if (col.tag == "Player") col.SendMessage("Attacked");
             Destroy(gameObject);
         }
     }

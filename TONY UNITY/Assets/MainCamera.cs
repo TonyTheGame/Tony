@@ -6,6 +6,7 @@ public class MainCamera : MonoBehaviour
 {
 
     public float smoothTime = 10f;
+    
 
     Transform target;
     float tLX, tLY, bRX, bRY;
@@ -15,6 +16,13 @@ public class MainCamera : MonoBehaviour
     void Awake()
     {
         target = GameObject.FindGameObjectWithTag("Player").transform;
+    }
+
+    void Start()
+    {
+        // Forzar la resolución si no estamos en versión Web
+        if (Application.platform != RuntimePlatform.WebGLPlayer)
+            Screen.SetResolution(800, 800, true);
     }
 
     void Update()
@@ -70,5 +78,17 @@ public class MainCamera : MonoBehaviour
             transform.position.z
         );
     }
-
+    private void OnGUI()
+    {
+        Vector2 pos = Camera.main.WorldToScreenPoint(transform.position);
+        GUI.Box(
+          new Rect(
+              pos.x - 200,                   // posición x de la barra
+              Screen.height - pos.y + 250,   // posición y de la barra
+              80,                           // anchura de la barra    
+              30                            // altura de la barra  
+          ),"puntos"            // texto de la barra
+      );
+    }
+  
 }

@@ -18,7 +18,7 @@ public class MainCamera : MonoBehaviour {
     void Start() {
         // Forzar la resolución si no estamos en versión Web
         if( Application.platform != RuntimePlatform.WebGLPlayer )
-            Screen.SetResolution (800, 800, true);
+            Screen.SetResolution( 800, 800, true);
     }
 
     void Update () {

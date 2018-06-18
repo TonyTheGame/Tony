@@ -12,6 +12,7 @@ public class inteligenciaMierda : MonoBehaviour
     public float speed;
     double coolDownTime = 0.5;
     double nextFireTime = 0;
+    private int puntos = 0;
 
 
     ///----- Variables relacionadas con el ataque
@@ -36,6 +37,19 @@ public class inteligenciaMierda : MonoBehaviour
     Animator anim;
     Rigidbody2D rb2d;
     private Vector3 target;
+
+    public int Puntos
+    {
+        get
+        {
+            return puntos;
+        }
+
+        set
+        {
+            puntos = value;
+        }
+    }
 
     void Start()
     {
@@ -157,6 +171,8 @@ public class inteligenciaMierda : MonoBehaviour
     public void Attacked()
     {
         if (--hp <= 0) Destroy(gameObject);
+        Puntos = Puntos + 1;
+   
     }
 
     ///---  Dibujamos las vidas del enemigo en una barra 
