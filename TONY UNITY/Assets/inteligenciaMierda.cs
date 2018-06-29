@@ -12,8 +12,8 @@ public class inteligenciaMierda : MonoBehaviour
     public float speed;
     double coolDownTime = 0.5;
     double nextFireTime = 0;
-    private int puntos = 0;
-
+    public static int puntos = 0;
+    bool muerto = false;
 
     ///----- Variables relacionadas con el ataque
     [Tooltip("Prefab de la roca que se disparará")]
@@ -31,7 +31,7 @@ public class inteligenciaMierda : MonoBehaviour
     GameObject player;
 
     // Variable para guardar la posición inicial
-   Vector3 initialPosition;
+    Vector3 initialPosition;
 
     // Animador y cuerpo cinemático con la rotación en Z congelada
     Animator anim;
@@ -69,7 +69,7 @@ public class inteligenciaMierda : MonoBehaviour
     {
 
         // Por defecto nuestro target siempre será nuestra posición inicial
-        Vector3 x = transform.position ;
+        Vector3 x = transform.position;
 
         // Comprobamos un Raycast del enemigo hasta el jugador
         RaycastHit2D hit = Physics2D.Raycast(
@@ -91,7 +91,7 @@ public class inteligenciaMierda : MonoBehaviour
         {
             if (hit.collider.tag == "Player")
             {
-               target = player.transform.position;
+                target = player.transform.position;
             }
         }
 
@@ -102,19 +102,19 @@ public class inteligenciaMierda : MonoBehaviour
         // Si es el enemigo y está en rango de ataque nos paramos y le atacamos
         if (distance < attackRadius)
         {
-          
-            if (Time.time > nextFireTime )
+
+            if (Time.time > nextFireTime)
             {
                 // Aquí le atacaríamos, pero por ahora simplemente cambiamos la animación
-               anim.SetFloat("movX", dir.x);
-               anim.SetFloat("movY", dir.y);
-         //   anim.Play("mierda_camina", -1, 0);  // Congela la animación de andar
+                anim.SetFloat("movX", dir.x);
+                anim.SetFloat("movY", dir.y);
+                //   anim.Play("mierda_camina", -1, 0);  // Congela la animación de andar
                 StartCoroutine(Attack(attackSpeed));
                 nextFireTime = Time.time + coolDownTime;
             }
-           
+
         }
-       // if (!attacking) StartCoroutine(Attack(attackSpeed));
+        // if (!attacking) StartCoroutine(Attack(attackSpeed));
         // En caso contrario nos movemos hacia él
         if (distance <= visionRadius && distance >= attackRadius)
         {
@@ -129,18 +129,18 @@ public class inteligenciaMierda : MonoBehaviour
         else
         {
             anim.SetFloat("movX", dir.x);
-            anim.SetFloat("movY", dir.y);           
+            anim.SetFloat("movY", dir.y);
             anim.SetBool("camina", false);
         }
 
         // Una última comprobación para evitar bugs forzando la posición inicial
-     /*  if (distance < 0.02f)
-        {
-            transform.position = initialPosition;
-            // Y cambiamos la animación de nuevo a Idle
-            anim.SetBool("camina", false);
-        }
-        */
+        /*  if (distance < 0.02f)
+           {
+               transform.position = initialPosition;
+               // Y cambiamos la animación de nuevo a Idle
+               anim.SetBool("camina", false);
+           }
+           */
         // Y un debug optativo con una línea hasta el target
         Debug.DrawLine(transform.position, target, Color.green);
     }
@@ -164,16 +164,17 @@ public class inteligenciaMierda : MonoBehaviour
             // Esperamos los segundos de turno antes de hacer otro ataque
             yield return new WaitForSeconds(seconds);
         }
-        
+
         attacking = false; // Desactivamos la bandera
 
     }
     public void Attacked()
     {
+
         if (--hp <= 0) Destroy(gameObject);
-        Puntos = Puntos + 1;
-   
+
     }
+   
 
     ///---  Dibujamos las vidas del enemigo en una barra 
     void OnGUI()
@@ -188,7 +189,7 @@ public class inteligenciaMierda : MonoBehaviour
                 Screen.height - pos.y + 60,   // posición y de la barra
                 40,                           // anchura de la barra    
                 24                            // altura de la barra  
-            ), hp + "/" + maxHp               // texto de la barra
+            ),hp + "/" + maxHp               // texto de la barra
         );
     }
 

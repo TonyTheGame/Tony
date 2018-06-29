@@ -158,6 +158,7 @@ public class movimiento : MonoBehaviour
     public void Attacked()
     {
         if (--hp <= 0) Destroy(gameObject);
+
     }
 
     ///---  Dibujamos las vidas del enemigo en una barra 

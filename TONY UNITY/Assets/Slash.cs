@@ -32,7 +32,7 @@ public class Slash : MonoBehaviour
             ///--- Restamos uno de vida si es un enemigo
             if (col.tag == "Enemy") col.SendMessage("Attacked");
             Destroy(gameObject);
-          
+            
         }
     }
 
