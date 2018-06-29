@@ -152,6 +152,12 @@ Prefab:
       propertyPath: m_RootOrder
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 212335639695623176, guid: 256b97cd77f327646b5b811b0eab9bc4,
+        type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 70b4907b81c6c6e42b73b0ff9b032add,
+        type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 256b97cd77f327646b5b811b0eab9bc4, type: 2}
   m_IsPrefabParent: 0
@@ -239,7 +245,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.5625, y: 1.1875}
+    oldSize: {x: 0.875, y: 1.375}
     newSize: {x: 0.5625, y: 1.1875}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -339,7 +345,7 @@ SpriteRenderer:
   m_SortingLayerID: -735562711
   m_SortingLayer: 4
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 8fde833fc91e09345bd3b0f69e4f8ea8, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 70b4907b81c6c6e42b73b0ff9b032add, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -608,6 +614,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   smoothTime: 0.35
+  mierda: {fileID: 1731989571199480, guid: f6a8ca040b40fbc47b69a26a4f69b402, type: 2}
 --- !u!1 &1452770671 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1226453856549532, guid: feb1b62990500964a831421dba1d8799,
