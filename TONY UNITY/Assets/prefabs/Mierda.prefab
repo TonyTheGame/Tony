@@ -24,7 +24,6 @@ GameObject:
   - component: {fileID: 114334531841013968}
   - component: {fileID: 50771430678321406}
   - component: {fileID: 60002295100973520}
-  - component: {fileID: 114669476898547120}
   m_Layer: 9
   m_Name: Mierda
   m_TagString: Enemy
@@ -136,18 +135,6 @@ MonoBehaviour:
   attackSpeed: 2
   maxHp: 3
   hp: 0
---- !u!114 &114669476898547120
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1731989571199480}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cb674c9f4d62816499234ef10fbd2b1d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  puntaje: 10
 --- !u!212 &212082412172276258
 SpriteRenderer:
   m_ObjectHideFlags: 1
