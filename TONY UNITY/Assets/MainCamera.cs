@@ -78,27 +78,6 @@ public class MainCamera : MonoBehaviour
             transform.position.z
         );
     }
-    public int puntos()
-    {
-        int puntaje=0;
-        if(mierda.gameObject==false)
-        {
-            puntaje = +1;
-        }
-        return puntaje;
-    }
-    private void OnGUI()
-    {
-        
-        Vector2 pos = Camera.main.WorldToScreenPoint(transform.position);
-        GUI.Box(
-          new Rect(
-              pos.x + 250,                   // posición x de la barra
-              Screen.height - pos.y - 300,   // posición y de la barra
-              80,                           // anchura de la barra    
-              30                            // altura de la barra  
-          ),puntos().ToString()          // texto de la barra
-      );
-    }
+   
   
 }
