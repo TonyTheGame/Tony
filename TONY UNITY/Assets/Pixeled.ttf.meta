@@ -1,9 +1,5 @@
 fileFormatVersion: 2
-<<<<<<< HEAD
-guid: 5fe48d7c4344f4243a752fca41cdd8cd
-=======
-guid: 43705c935a4dc9245a2b5d52c3d7df31
->>>>>>> eeb4bb43bb869de2cb998447ce89b8e3db41176c
+guid: 09dde4ae703fc144ab52c29a791868ba
 TrueTypeFontImporter:
   externalObjects: {}
   serializedVersion: 4
@@ -12,9 +8,9 @@ TrueTypeFontImporter:
   characterSpacing: 0
   characterPadding: 1
   includeFontData: 1
-  fontName: Pixellari
+  fontName: Pixeled
   fontNames:
-  - Pixellari
+  - Pixeled
   fallbackFontReferences: []
   customCharacters: 
   fontRenderingMode: 0

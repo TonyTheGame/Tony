@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 
 public class GameController : MonoBehaviour {
+
     public static int Score = 0;
     public string ScoreString = "PUNTAJE: ";
     public Text TextScore;
@@ -15,18 +16,12 @@ public class GameController : MonoBehaviour {
         Gamecontroller = this;
     }
 
+	void Update ()
+    {
 
-    
-    // Use this for initialization
-    void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
 		if(TextScore!=null)
         {
             TextScore.text = ScoreString + Score.ToString();
         }
-	}
+    }
 }

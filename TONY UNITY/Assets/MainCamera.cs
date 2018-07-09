@@ -6,7 +6,7 @@ public class MainCamera : MonoBehaviour
 {
    
     public float smoothTime = 10f;
-    public GameObject mierda;
+
 
     Transform target;
     float tLX, tLY, bRX, bRY;
@@ -78,6 +78,5 @@ public class MainCamera : MonoBehaviour
             transform.position.z
         );
     }
-   
-  
+
 }
