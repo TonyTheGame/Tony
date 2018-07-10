@@ -10,7 +10,7 @@ public class inteligenciaMierda : MonoBehaviour
     public float visionRadius;
     public float attackRadius;
     public float speed;
-    double coolDownTime = 0.5;
+     public double coolDownTime = 0.5;
     double nextFireTime = 0;
     public static int puntos = 0;
     bool muerto = false;

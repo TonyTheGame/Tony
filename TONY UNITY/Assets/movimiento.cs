@@ -42,7 +42,7 @@ public class movimiento : MonoBehaviour
         attackCollider.enabled = false;
 
           Camera.main.GetComponent<MainCamera>().SetBound(initialMap);
-        hp = maxHp;
+          hp = maxHp;
     }
 
     void Update()

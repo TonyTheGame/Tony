@@ -132,9 +132,10 @@ MonoBehaviour:
   visionRadius: 6
   attackRadius: 3.5
   speed: 3
+  coolDownTime: 0.5
   rockPrefab: {fileID: 1351541881990330, guid: 861814025a4ad0a4ab775b05bf5ecdde, type: 2}
-  attackSpeed: 2
-  maxHp: 3
+  attackSpeed: 200
+  maxHp: 1
   hp: 0
 --- !u!114 &114674161759075842
 MonoBehaviour:
@@ -147,7 +148,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3cb9d03d215f412489b5acc5b2c1dcfc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  puntaje: 10
+  puntaje: 20
 --- !u!212 &212082412172276258
 SpriteRenderer:
   m_ObjectHideFlags: 1

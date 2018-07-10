@@ -56,3 +56,6 @@ TagManager:
   - name: Salchica
     uniqueID: 3559404585
     locked: 0
+  - name: Camion
+    uniqueID: 2517433059
+    locked: 0

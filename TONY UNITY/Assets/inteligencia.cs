@@ -42,6 +42,7 @@ public class inteligencia : MonoBehaviour
 
         anim = GetComponent<Animator>();
         rb2d = GetComponent<Rigidbody2D>();
+
     }
 
     void Update()
