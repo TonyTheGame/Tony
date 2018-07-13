@@ -135,7 +135,7 @@ MonoBehaviour:
   coolDownTime: 0.5
   rockPrefab: {fileID: 1351541881990330, guid: 861814025a4ad0a4ab775b05bf5ecdde, type: 2}
   attackSpeed: 200
-  maxHp: 1
+  maxHp: 2
   hp: 0
 --- !u!114 &114674161759075842
 MonoBehaviour:
