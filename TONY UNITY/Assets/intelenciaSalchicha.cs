@@ -2,11 +2,24 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class intelenciaSalchicha : MonoBehaviour {
+public class inteligenciaSalchicha : MonoBehaviour
+{
+
+
     // Variables para gestionar el radio de visión, el de ataque y la velocidad
     public float visionRadius;
     public float attackRadius;
     public float speed;
+    public double coolDownTime = 0.5;
+    double nextFireTime = 0;
+    [Tooltip("Velocidad de ataque (segundos entre ataques)")]
+    public float attackSpeed = 10f;
+    bool attacking;
+    ///----- Fin de Variables relacionadas con el ataque
+    [Tooltip("Puntos de vida")]
+    public int maxHp = 3;
+    [Tooltip("Vida actual")]
+    public int hp;
 
     // Variable para guardar al jugador
     GameObject player;
@@ -17,6 +30,7 @@ public class intelenciaSalchicha : MonoBehaviour {
     // Animador y cuerpo cinemático con la rotación en Z congelada
     Animator anim;
     Rigidbody2D rb2d;
+    private Vector3 target;
 
     void Start()
     {
@@ -29,13 +43,14 @@ public class intelenciaSalchicha : MonoBehaviour {
 
         anim = GetComponent<Animator>();
         rb2d = GetComponent<Rigidbody2D>();
+        hp = maxHp;
     }
 
     void Update()
     {
 
         // Por defecto nuestro target siempre será nuestra posición inicial
-        Vector3 target = initialPosition;
+        Vector3 x = transform.position;
 
         // Comprobamos un Raycast del enemigo hasta el jugador
         RaycastHit2D hit = Physics2D.Raycast(
@@ -65,18 +80,14 @@ public class intelenciaSalchicha : MonoBehaviour {
         float distance = Vector3.Distance(target, transform.position);
         Vector3 dir = (target - transform.position).normalized;
 
+ 
         // Si es el enemigo y está en rango de ataque nos paramos y le atacamos
-        if (target != initialPosition && distance < attackRadius)
-        {
-            // Aquí le atacaríamos, pero por ahora simplemente cambiamos la animación
-            anim.SetFloat("movX", dir.x);
-            anim.SetFloat("movY", dir.y);
-            anim.Play("salchicha_camina", -1, 0);  // Congela la animación de andar
-        }
+  
+        // if (!attacking) StartCoroutine(Attack(attackSpeed));
         // En caso contrario nos movemos hacia él
-        else
+        if (distance <= visionRadius && distance >= attackRadius)
         {
-            rb2d.MovePosition(transform.position + dir * speed * Time.deltaTime);
+            rb2d.MovePosition(transform.position + (dir * speed * Time.deltaTime));
 
             // Al movernos establecemos la animación de movimiento
             anim.speed = 1;
@@ -84,15 +95,21 @@ public class intelenciaSalchicha : MonoBehaviour {
             anim.SetFloat("movY", dir.y);
             anim.SetBool("camina", true);
         }
-
-        // Una última comprobación para evitar bugs forzando la posición inicial
-        if (target == initialPosition && distance < 0.02f)
+        else
         {
-            transform.position = initialPosition;
-            // Y cambiamos la animación de nuevo a Idle
+            anim.SetFloat("movX", dir.x);
+            anim.SetFloat("movY", dir.y);
             anim.SetBool("camina", false);
         }
 
+        // Una última comprobación para evitar bugs forzando la posición inicial
+        /*  if (distance < 0.02f)
+           {
+               transform.position = initialPosition;
+               // Y cambiamos la animación de nuevo a Idle
+               anim.SetBool("camina", false);
+           }
+           */
         // Y un debug optativo con una línea hasta el target
         Debug.DrawLine(transform.position, target, Color.green);
     }
@@ -106,6 +123,45 @@ public class intelenciaSalchicha : MonoBehaviour {
         Gizmos.DrawWireSphere(transform.position, attackRadius);
 
     }
+    public void Attacked()
+    {
+
+        if (--hp <= 0) Destroy(gameObject);
+
+    }
+
+
+    ///---  Dibujamos las vidas del enemigo en una barra 
+    void OnGUI()
+    {
+        // Guardamos la posición del enemigo en el mundo respecto a la cámara
+        Vector2 pos = Camera.main.WorldToScreenPoint(transform.position);
+
+        // Dibujamos el cuadrado debajo del enemigo con el texto
+        GUI.Box(
+            new Rect(
+                pos.x - 20,                   // posición x de la barra
+                Screen.height - pos.y + 60,   // posición y de la barra
+                40,                           // anchura de la barra    
+                24                            // altura de la barra  
+            ), hp + "/" + maxHp               // texto de la barra
+        );
+    }
+    public void OnTriggerEnter2D(Collider2D col)
+    {
+        float distance = Vector3.Distance(target, transform.position);
+        if (distance < attackRadius)
+        {
+
+            if (Time.time > nextFireTime)
+            {
+                if (col.transform.tag == "Player" || col.transform.tag == "Attack")
+                {
+                    if (col.tag == "Player") col.SendMessage("Attacked");
+                }
+            }
+
+        }
+    }
 
 }
-

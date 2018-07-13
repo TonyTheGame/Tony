@@ -2,21 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class inteligenciaMierda : MonoBehaviour
+public class inteligenciaSalchicha2 : MonoBehaviour
 {
 
-
-    // Variables para gestionar el radio de visión, el de ataque y la velocidad
+	 // Variables para gestionar el radio de visión, el de ataque y la velocidad
     public float visionRadius;
     public float attackRadius;
     public float speed;
-     public double coolDownTime = 0.5;
+    public double coolDownTime = 0.5;
     double nextFireTime = 0;
-    public static int puntos = 0;
-
-    ///----- Variables relacionadas con el ataque
-    [Tooltip("Prefab de la roca que se disparará")]
-    public GameObject rockPrefab;
     [Tooltip("Velocidad de ataque (segundos entre ataques)")]
     public float attackSpeed = 10f;
     bool attacking;
@@ -36,19 +30,6 @@ public class inteligenciaMierda : MonoBehaviour
     Animator anim;
     Rigidbody2D rb2d;
     private Vector3 target;
-
-    public int Puntos
-    {
-        get
-        {
-            return puntos;
-        }
-
-        set
-        {
-            puntos = value;
-        }
-    }
 
     void Start()
     {
@@ -97,22 +78,19 @@ public class inteligenciaMierda : MonoBehaviour
         // Calculamos la distancia y dirección actual hasta el target
         float distance = Vector3.Distance(target, transform.position);
         Vector3 dir = (target - transform.position).normalized;
-
-        // Si es el enemigo y está en rango de ataque nos paramos y le atacamos
         if (distance < attackRadius)
         {
 
             if (Time.time > nextFireTime)
             {
-                // Aquí le atacaríamos, pero por ahora simplemente cambiamos la animación
-                anim.SetFloat("movX", dir.x);
-                anim.SetFloat("movY", dir.y);
-                //   anim.Play("mierda_camina", -1, 0);  // Congela la animación de andar
-                StartCoroutine(Attack(attackSpeed));
+                player.SendMessage("Attacked");
+                anim.SetTrigger("atacando");
                 nextFireTime = Time.time + coolDownTime;
             }
 
         }
+        // Si es el enemigo y está en rango de ataque nos paramos y le atacamos
+
         // if (!attacking) StartCoroutine(Attack(attackSpeed));
         // En caso contrario nos movemos hacia él
         if (distance <= visionRadius && distance >= attackRadius)
@@ -153,27 +131,18 @@ public class inteligenciaMierda : MonoBehaviour
         Gizmos.DrawWireSphere(transform.position, attackRadius);
 
     }
-    IEnumerator Attack(float seconds)
-    {
-        attacking = true;  // Activamos la bandera
-        // Si tenemos objetivo y el prefab es correcto creamos la roca
-        if (target != initialPosition && rockPrefab != null)
-        {
-            Instantiate(rockPrefab, transform.position, transform.rotation);
-            // Esperamos los segundos de turno antes de hacer otro ataque
-            yield return new WaitForSeconds(seconds);
-        }
-
-        attacking = false; // Desactivamos la bandera
-
-    }
     public void Attacked()
     {
+        Debug.Log("atacado");
 
-        if (--hp <= 0) Destroy(gameObject);
+        if (--hp <= 0)
+        {
+            Destroy(gameObject);
+            Debug.Log("recibe daño");
+        }
 
     }
-   
+
 
     ///---  Dibujamos las vidas del enemigo en una barra 
     void OnGUI()
@@ -188,7 +157,7 @@ public class inteligenciaMierda : MonoBehaviour
                 Screen.height - pos.y + 60,   // posición y de la barra
                 40,                           // anchura de la barra    
                 24                            // altura de la barra  
-            ),hp + "/" + maxHp               // texto de la barra
+            ), hp + "/" + maxHp               // texto de la barra
         );
     }
 
