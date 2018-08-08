@@ -12,6 +12,8 @@ public class InteligenciaDona : MonoBehaviour
     public float speed;
     public double coolDownTime = 0.5;
     double nextFireTime = 0;
+    public double coolDownTimeBala = 0.2;
+    double nextFireTimeBala = 0;
     public static int puntos = 0;
 
     ///----- Variables relacionadas con el ataque
@@ -24,6 +26,7 @@ public class InteligenciaDona : MonoBehaviour
     public GameObject BolaAD;
     public GameObject BolaBI;
     public GameObject BolaBD;
+    public GameObject Bala;
 
     [Tooltip("Velocidad de ataque (segundos entre ataques)")]
     public float attackSpeed = 10f;
@@ -106,18 +109,27 @@ public class InteligenciaDona : MonoBehaviour
         float distance = Vector3.Distance(target, transform.position);
         Vector3 dir = (target - transform.position).normalized;
 
-        // Si es el enemigo y está en rango de ataque nos paramos y le atacamos
+        // ATAQUE DE BOLAS DE COLOR
         if (distance < attackRadius)
         {
 
             if (Time.time > nextFireTime)
             {
-                // Aquí le atacaríamos, pero por ahora simplemente cambiamos la animación
-                anim.SetFloat("movX", dir.x);
-                anim.SetFloat("movY", dir.y);
-                //   anim.Play("mierda_camina", -1, 0);  // Congela la animación de andar
+   
+           
                 StartCoroutine(Attack(attackSpeed));
                 nextFireTime = Time.time + coolDownTime;
+            }
+
+        }
+        //ATAQUE DE BALA
+        if (distance < attackRadius && hp<=10)
+        {
+
+            if (Time.time > nextFireTimeBala)
+            { 
+                StartCoroutine(AttackBala(attackSpeed));
+                nextFireTimeBala = Time.time + coolDownTimeBala;
             }
 
         }
@@ -167,6 +179,7 @@ public class InteligenciaDona : MonoBehaviour
         // Si tenemos objetivo y el prefab es correcto creamos la roca
         if (target != initialPosition && BolaDerecha != null)
         {
+            anim.SetTrigger("atacando");
             Instantiate(BolaDerecha, transform.position, transform.rotation);
             Instantiate(BolaIzquierda, transform.position, transform.rotation);
             Instantiate(BolaArriba, transform.position, transform.rotation);
@@ -176,6 +189,21 @@ public class InteligenciaDona : MonoBehaviour
             Instantiate(BolaBI, transform.position, transform.rotation);
             Instantiate(BolaBD, transform.position, transform.rotation);
 
+            // Esperamos los segundos de turno antes de hacer otro ataque
+            yield return new WaitForSeconds(seconds);
+        }
+
+        attacking = false; // Desactivamos la bandera
+
+    }
+    IEnumerator AttackBala(float seconds)
+    {
+        attacking = true;  // Activamos la bandera
+        // Si tenemos objetivo y el prefab es correcto creamos la roca
+        if (target != initialPosition )
+        {
+            anim.SetTrigger("atacando");
+            Instantiate(Bala, transform.position, transform.rotation);
             // Esperamos los segundos de turno antes de hacer otro ataque
             yield return new WaitForSeconds(seconds);
         }
