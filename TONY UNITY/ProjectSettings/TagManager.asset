@@ -63,3 +63,9 @@ TagManager:
   - name: Dona
     uniqueID: 88866607
     locked: 0
+  - name: Ricky
+    uniqueID: 4257452133
+    locked: 0
+  - name: Moneda
+    uniqueID: 297383379
+    locked: 0

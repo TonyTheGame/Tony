@@ -108,7 +108,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba9f60bfbcee5d946b3c7e8dd1dbe462, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  visionRadius: 6
+  visionRadius: 7
   attackRadius: 4
   speed: 2
   coolDownTime: 2
@@ -125,7 +125,7 @@ MonoBehaviour:
   BolaBD: {fileID: 1956133171571444, guid: 41362787fee5ecc4ab7771cfa30fa089, type: 2}
   Bala: {fileID: 1315950484313818, guid: 84e910df543c07c4d8226267dac25261, type: 2}
   attackSpeed: 10
-  maxHp: 10
+  maxHp: 20
   hp: 0
 --- !u!212 &212555463224190926
 SpriteRenderer:
