@@ -10,7 +10,8 @@ public class AgregarScore : MonoBehaviour {
     {
         GameController.Score += puntaje;
     }
-    void Start () {
+    void Start ()
+    {
 		
 	}
 	

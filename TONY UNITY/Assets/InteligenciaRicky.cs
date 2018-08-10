@@ -2,32 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class InteligenciaDona : MonoBehaviour
+public class InteligenciaRicky : MonoBehaviour
 {
 
 
-    // Variables para gestionar el radio de visión, el de ataque y la velocidad
+	 // Variables para gestionar el radio de visión, el de ataque y la velocidad
     public float visionRadius;
     public float attackRadius;
     public float speed;
     public double coolDownTime = 0.5;
     double nextFireTime = 0;
-    public double coolDownTimeBala = 4;
-    double nextFireTimeBala = 0;
-    public static int puntos = 0;
-
-    ///----- Variables relacionadas con el ataque
-    [Tooltip("Prefab de la roca que se disparará")]
-    public GameObject BolaDerecha;
-    public GameObject BolaIzquierda;
-    public GameObject BolaArriba;
-    public GameObject BolaAbajo;
-    public GameObject BolaAI;
-    public GameObject BolaAD;
-    public GameObject BolaBI;
-    public GameObject BolaBD;
-    public GameObject Bala;
-
     [Tooltip("Velocidad de ataque (segundos entre ataques)")]
     public float attackSpeed = 10f;
     bool attacking;
@@ -47,19 +31,6 @@ public class InteligenciaDona : MonoBehaviour
     Animator anim;
     Rigidbody2D rb2d;
     private Vector3 target;
-
-    public int Puntos
-    {
-        get
-        {
-            return puntos;
-        }
-
-        set
-        {
-            puntos = value;
-        }
-    }
 
     void Start()
     {
@@ -108,31 +79,19 @@ public class InteligenciaDona : MonoBehaviour
         // Calculamos la distancia y dirección actual hasta el target
         float distance = Vector3.Distance(target, transform.position);
         Vector3 dir = (target - transform.position).normalized;
-
-        // ATAQUE DE BOLAS DE COLOR
         if (distance < attackRadius)
         {
 
             if (Time.time > nextFireTime)
             {
-   
-           
-                StartCoroutine(Attack(attackSpeed));
+                player.SendMessage("Attacked");
+                anim.SetTrigger("atacando");
                 nextFireTime = Time.time + coolDownTime;
             }
 
         }
-        //ATAQUE DE BALA
-        if (distance < attackRadius && hp<=10)
-        {
+        // Si es el enemigo y está en rango de ataque nos paramos y le atacamos
 
-            if (Time.time > nextFireTimeBala)
-            { 
-                StartCoroutine(AttackBala(attackSpeed));
-                nextFireTimeBala = Time.time + coolDownTimeBala;
-            }
-
-        }
         // if (!attacking) StartCoroutine(Attack(attackSpeed));
         // En caso contrario nos movemos hacia él
         if (distance <= visionRadius && distance >= attackRadius)
@@ -173,48 +132,15 @@ public class InteligenciaDona : MonoBehaviour
         Gizmos.DrawWireSphere(transform.position, attackRadius);
 
     }
-    IEnumerator Attack(float seconds)
-    {
-        attacking = true;  // Activamos la bandera
-        // Si tenemos objetivo y el prefab es correcto creamos la roca
-        if (target != initialPosition && BolaDerecha != null)
-        {
-            anim.SetTrigger("atacando");
-            Instantiate(BolaDerecha, transform.position, transform.rotation);
-            Instantiate(BolaIzquierda, transform.position, transform.rotation);
-            Instantiate(BolaArriba, transform.position, transform.rotation);
-            Instantiate(BolaAbajo, transform.position, transform.rotation);
-            Instantiate(BolaAI, transform.position, transform.rotation);
-            Instantiate(BolaAD, transform.position, transform.rotation);
-            Instantiate(BolaBI, transform.position, transform.rotation);
-            Instantiate(BolaBD, transform.position, transform.rotation);
-
-            // Esperamos los segundos de turno antes de hacer otro ataque
-            yield return new WaitForSeconds(seconds);
-        }
-
-        attacking = false; // Desactivamos la bandera
-
-    }
-    IEnumerator AttackBala(float seconds)
-    {
-        attacking = true;  // Activamos la bandera
-        // Si tenemos objetivo y el prefab es correcto creamos la roca
-        if (target != initialPosition )
-        {
-            anim.SetTrigger("atacando");
-            Instantiate(Bala, transform.position, transform.rotation);
-            // Esperamos los segundos de turno antes de hacer otro ataque
-            yield return new WaitForSeconds(seconds);
-        }
-
-        attacking = false; // Desactivamos la bandera
-
-    }
     public void Attacked()
     {
+        Debug.Log("atacado");
 
-        if (--hp <= 0) Destroy(gameObject);
+        if (--hp <= 0)
+        {
+            Destroy(gameObject);
+            Debug.Log("recibe daño");
+        }
 
     }
 
