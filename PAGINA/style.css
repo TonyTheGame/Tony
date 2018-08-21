@@ -3,17 +3,22 @@
   margin: 0;
 }
 p {
-
+  width: 60%;
+  margin-top: 75px;
 	position: absolute;
 	z-index: 2;
 	color: gray;
 	font-family: arial;
+  left: 50%;
+  top: 50%;
 }
+
 .wrapper {
   width: 80%;
   margin: auto;
   overflow:hidden;
 }
+
 header {
   background: #FAA929;
   width: 100%;
@@ -55,3 +60,7 @@ nav ul li:hover {
 
 }
 
+
+html, body { 
+  height: 100%;
+}
