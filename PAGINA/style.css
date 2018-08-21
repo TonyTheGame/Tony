@@ -5,7 +5,7 @@
 p {
 
 	position: absolute;
-	z-index: 4;
+	z-index: 2;
 	color: gray;
 	font-family: arial;
 }
