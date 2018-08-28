@@ -1,4 +1,4 @@
-$(document).ready(function() {
+/*$(document).ready(function() {
 	var $parrafo = $("#resumen");	
 
 	$parrafo.css('margin-left', (($parrafo.width() / 2) * -1) + "px");
@@ -29,4 +29,8 @@ $(window).resize(function() {
 
 	$imagen.css('margin-left', (($imagen.width() / 2) * -1) + "px");
 	$imagen.css('margin-top', (($imagen.height() / 2) * -1) + "px");
+});*/
+
+$(document).ready(function() {
+	$("body").vide('video.mp4');
 });

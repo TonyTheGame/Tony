@@ -2,15 +2,16 @@
   padding: 0;
   margin: 0;
 }
-p {
+
+#resumen {/*
   width: 60%;
   margin-top: 75px;
 	position: absolute;
-	z-index: 2;
+	z-index: 2;*/
 	color: white;
-	font-family: Helvetica;
-  left: 50%;
-  top: 50%;
+	font-family: 'Helvetica';
+  /*left: 50%;
+  top: 50%;*/
 }
 
 .wrapper {
@@ -35,22 +36,26 @@ header {
 nav {
   float: right; 
 }
+
 nav ul {
   list-style: none;
   overflow: hidden;
   padding: 12px; 
 }
+
 nav ul li {
   float: left;
   font-family: Arial, sans-serif;
   font-size: 16px;
 }
+
 nav ul li a {
   display: block; 
   padding: 10px;
   color: #fff;
   text-decoration: none;
 }
+
 nav ul li:hover {
   background: #FAD03A;
 }
@@ -60,13 +65,45 @@ nav ul li:hover {
 
 }
 
-#titulo{
+#titulo {
   width: 50%;
-  position: absolute;
+  /*position: absolute;
   z-index: 2;
   left: 50%;
-  top: 30%;
+  top: 30%;*/
+    margin-top: 100px;
 }
+
 html, body { 
   height: 100%;
+}
+
+#main {
+  width: 75%;
+  margin: 0 auto 0;
+  padding-top: 100px;
+  text-align: center;
+}
+
+#main > p { 
+  margin: auto;
+    margin-top: 20px;
+    width: 70%; 
+}
+
+#desc {
+  width: 80%;
+  margin: 0 auto;
+  margin-top: 334px;
+}
+
+#desc div {
+  text-align: center;
+  float: left;
+  width: 25%;
+
+}
+
+#desc img {
+  width: 97.5%;
 }
