@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" tiledversion="1.1.3" orientation="orthogonal" renderorder="left-up" width="400" height="16" tilewidth="16" tileheight="16" infinite="0" nextobjectid="255">
+<map version="1.0" tiledversion="1.1.3" orientation="orthogonal" renderorder="left-up" width="400" height="16" tilewidth="16" tileheight="16" infinite="0" nextobjectid="257">
  <tileset firstgid="1" source="Template.tsx"/>
  <tileset firstgid="10001" source="Tileset Nivel 2.tsx"/>
  <tileset firstgid="11370" source="TemplateCasas1Noche.tsx"/>
@@ -590,6 +590,8 @@
   <object id="252" x="4001.17" y="180" width="31.6667" height="26"/>
   <object id="253" x="4833.17" y="180" width="31.6667" height="26"/>
   <object id="254" x="6049.17" y="180" width="31.6667" height="26"/>
+  <object id="255" x="45" y="-2" width="6.5" height="32"/>
+  <object id="256" x="45" y="226" width="6.5" height="28"/>
  </objectgroup>
  <group name="Grupo 1"/>
 </map>
