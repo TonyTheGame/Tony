@@ -24,6 +24,7 @@ GameObject:
   - component: {fileID: 114626082097030460}
   - component: {fileID: 50714772459894728}
   - component: {fileID: 58619669707383904}
+  - component: {fileID: 114684523807469960}
   m_Layer: 0
   m_Name: Dona
   m_TagString: Enemy
@@ -108,7 +109,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba9f60bfbcee5d946b3c7e8dd1dbe462, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  visionRadius: 7
+  visionRadius: 15
   attackRadius: 4
   speed: 2
   coolDownTime: 2
@@ -127,6 +128,18 @@ MonoBehaviour:
   attackSpeed: 10
   maxHp: 20
   hp: 0
+--- !u!114 &114684523807469960
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1911330367402946}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3cb9d03d215f412489b5acc5b2c1dcfc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  puntaje: 100
 --- !u!212 &212555463224190926
 SpriteRenderer:
   m_ObjectHideFlags: 1
