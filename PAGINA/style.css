@@ -2,15 +2,16 @@
   padding: 0;
   margin: 0;
 }
-p {
+
+#resumen {/*
   width: 60%;
   margin-top: 75px;
 	position: absolute;
-	z-index: 2;
-	color: gray;
-	font-family: arial;
-  left: 50%;
-  top: 50%;
+	z-index: 2;*/
+	color: white;
+	font-family: 'Helvetica';
+  /*left: 50%;
+  top: 50%;*/
 }
 
 .wrapper {
@@ -35,22 +36,26 @@ header {
 nav {
   float: right; 
 }
+
 nav ul {
   list-style: none;
   overflow: hidden;
   padding: 12px; 
 }
+
 nav ul li {
   float: left;
   font-family: Arial, sans-serif;
   font-size: 16px;
 }
+
 nav ul li a {
   display: block; 
   padding: 10px;
   color: #fff;
   text-decoration: none;
 }
+
 nav ul li:hover {
   background: #FAD03A;
 }
@@ -60,7 +65,55 @@ nav ul li:hover {
 
 }
 
+#titulo {
+  width: 50%;
+  /*position: absolute;
+  z-index: 2;
+  left: 50%;
+  top: 30%;*/
+    margin-top: 100px;
+}
 
 html, body { 
   height: 100%;
 }
+
+#main {
+  padding-top: 100px;
+}
+
+#presentacion 
+{
+	width: 75%;
+  margin: 0 auto 0;
+  text-align: center;
+}
+#presentacion > p { 
+  margin: auto;
+    margin-top: 20px;
+    width: 70%; 
+}
+
+#desc {
+  width: 100%;
+  margin: 600px auto 0;
+  
+  /*background: #fff;*/
+}
+
+#imagenes {
+	width: 80%;
+	margin: 0 auto;
+}
+
+#imagenes div {
+  /*text-align: center;*/
+  float: left;
+  width: 25%;
+}
+
+#desc img {
+  width: 97.5%;
+}
+
+/*div > video { position: fixed !important; }*/
