@@ -75,35 +75,44 @@ html, body {
 }
 
 #main {
-  width: 75%;
-  margin: 0 auto 0;
   padding-top: 100px;
-  text-align: center;
 }
 
-#main > p { 
+#presentacion 
+{
+	width: 75%;
+  margin: 0 auto 0;
+  text-align: center;
+}
+#presentacion > p { 
   margin: auto;
     margin-top: 20px;
     width: 70%; 
 }
 
 #desc {
-  width: 80%;
-  margin: 0 auto;
-  margin-top: 334px;
+  width: 100%;
+  margin: 600px auto 0;
+  
+  /*background: #fff;*/
 }
 
-#desc div {
-  text-align: center;
+#imagenes {
+	width: 80%;
+	margin: 0 auto;
+}
+
+#imagenes div {
+  /*text-align: center;*/
   float: left;
   width: 25%;
-
 }
 
 #desc img {
   width: 97.5%;
 }
 
+<<<<<<< HEAD
 /*JUEGO*/
 /*tony*/
 #tonyd{
@@ -153,3 +162,6 @@ html, body {
     font-size: 15px;
     width:40%;
 }
+=======
+/*div > video { position: fixed !important; }*/
+>>>>>>> 90215c94de07fcfc52175264680bef8d9ca030a3
