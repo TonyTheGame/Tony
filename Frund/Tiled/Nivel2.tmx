@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" tiledversion="1.1.3" orientation="orthogonal" renderorder="left-up" width="50" height="150" tilewidth="16" tileheight="16" infinite="0" nextobjectid="305">
+<map version="1.0" tiledversion="1.1.3" orientation="orthogonal" renderorder="left-up" width="50" height="150" tilewidth="16" tileheight="16" infinite="0" nextobjectid="309">
  <tileset firstgid="1" source="Template.tsx"/>
  <tileset firstgid="10001" source="Tileset Nivel 2.tsx"/>
  <tileset firstgid="11370" source="TemplateCasas1LadrillosAmarillos.tsx"/>
@@ -4206,4 +4206,10 @@
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
 </data>
  </layer>
+ <objectgroup name="Borde">
+  <object id="305" x="0" y="-16" width="816" height="16"/>
+  <object id="306" x="800" y="0" width="16" height="2416"/>
+  <object id="307" x="-16" y="2400" width="816" height="16"/>
+  <object id="308" x="-16" y="-16" width="16" height="2416"/>
+ </objectgroup>
 </map>
