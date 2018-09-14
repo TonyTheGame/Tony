@@ -133,12 +133,12 @@ public class inteligenciaSalchicha2 : MonoBehaviour
     }
     public void Attacked()
     {
-        Debug.Log("atacado");
+        anim.SetTrigger("atacado");
 
         if (--hp <= 0)
         {
             Destroy(gameObject);
-            Debug.Log("recibe daño");
+          
         }
 
     }
