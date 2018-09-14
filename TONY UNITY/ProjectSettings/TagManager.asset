@@ -48,35 +48,38 @@ TagManager:
   - name: Player
     uniqueID: 1165630317
     locked: 0
+  - name: Ricky
+    uniqueID: 4257452133
+    locked: 0
+  - name: Pollo1
+    uniqueID: 3821479547
+    locked: 0
+  - name: Salchica
+    uniqueID: 3559404585
+    locked: 0
+  - name: Dona
+    uniqueID: 88866607
+    locked: 0
+  - name: Pata
+    uniqueID: 1749410871
+    locked: 0
+  - name: Edificios
+    uniqueID: 2501114991
+    locked: 0
   - name: Zombie
     uniqueID: 1396137661
     locked: 0
   - name: fireball
     uniqueID: 919283759
     locked: 0
-  - name: Salchica
-    uniqueID: 3559404585
-    locked: 0
   - name: Camion
     uniqueID: 2517433059
-    locked: 0
-  - name: Dona
-    uniqueID: 88866607
-    locked: 0
-  - name: Ricky
-    uniqueID: 4257452133
     locked: 0
   - name: Moneda
     uniqueID: 297383379
     locked: 0
   - name: Muro
     uniqueID: 1990526241
-    locked: 0
-  - name: Pata
-    uniqueID: 1749410871
-    locked: 0
-  - name: Pollo1
-    uniqueID: 3821479547
     locked: 0
   - name: Meta
     uniqueID: 2241291521

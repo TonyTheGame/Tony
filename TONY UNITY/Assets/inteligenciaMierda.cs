@@ -169,7 +169,7 @@ public class inteligenciaMierda : MonoBehaviour
     }
     public void Attacked()
     {
-
+        anim.SetTrigger("atacado");
         if (--hp <= 0) Destroy(gameObject);
 
     }
