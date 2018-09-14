@@ -63,3 +63,27 @@ TagManager:
   - name: Dona
     uniqueID: 88866607
     locked: 0
+  - name: Ricky
+    uniqueID: 4257452133
+    locked: 0
+  - name: Moneda
+    uniqueID: 297383379
+    locked: 0
+  - name: Muro
+    uniqueID: 1990526241
+    locked: 0
+  - name: Pata
+    uniqueID: 1749410871
+    locked: 0
+  - name: Pollo1
+    uniqueID: 3821479547
+    locked: 0
+  - name: Meta
+    uniqueID: 2241291521
+    locked: 0
+  - name: Banana
+    uniqueID: 3992461327
+    locked: 0
+  - name: Pollo2
+    uniqueID: 2716890277
+    locked: 0

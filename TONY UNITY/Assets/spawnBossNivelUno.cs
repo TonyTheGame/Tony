@@ -14,7 +14,7 @@ public class spawnBossNivelUno : MonoBehaviour {
 	void Update () {
         if (GameController.Score >=230&&contador==0)
              {
-            contador = +1;
+            contador ++;
                 Instantiate(Dona, transform.position, transform.rotation);
 
              }

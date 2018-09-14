@@ -1,35 +1,35 @@
 fileFormatVersion: 2
-guid: 310509ca214e8e74192630cb956ff666
+guid: 0c4cf3dbf45150543b1f7e8bdb4b0f3d
 TextureImporter:
   fileIDToRecycleName:
-    21300000: explosjon3_0
-    21300002: explosjon3_1
-    21300004: explosjon3_2
-    21300006: explosjon3_3
-    21300008: explosjon3_4
-    21300010: explosjon3_5
-    21300012: explosjon3_6
-    21300014: explosjon3_7
-    21300016: explosjon3_8
-    21300018: explosjon3_9
-    21300020: explosjon3_10
-    21300022: explosjon3_11
-    21300024: explosjon3_12
-    21300026: explosjon3_13
-    21300028: explosjon3_14
-    21300030: explosjon3_15
-    21300032: explosjon3_16
-    21300034: explosjon3_17
-    21300036: explosjon3_18
-    21300038: explosjon3_19
-    21300040: explosjon3_20
-    21300042: explosjon3_21
-    21300044: explosjon3_22
-    21300046: explosjon3_23
-    21300048: explosjon3_24
-    21300050: explosjon3_25
+    21300000: ExplosionValla_0
+    21300002: ExplosionValla_1
+    21300004: ExplosionValla_2
+    21300006: ExplosionValla_3
+    21300008: ExplosionValla_4
+    21300010: ExplosionValla_5
+    21300012: ExplosionValla_6
+    21300014: ExplosionValla_7
+    21300016: ExplosionValla_8
+    21300018: ExplosionValla_9
+    21300020: ExplosionValla_10
+    21300022: ExplosionValla_11
+    21300024: ExplosionValla_12
+    21300026: ExplosionValla_13
+    21300028: ExplosionValla_14
+    21300030: ExplosionValla_15
+    21300032: ExplosionValla_16
+    21300034: ExplosionValla_17
+    21300036: ExplosionValla_18
+    21300038: ExplosionValla_19
+    21300040: ExplosionValla_20
+    21300042: ExplosionValla_21
+    21300044: ExplosionValla_22
+    21300046: ExplosionValla_23
+    21300048: ExplosionValla_24
+    21300050: ExplosionValla_25
   externalObjects: {}
-  serializedVersion: 5
+  serializedVersion: 7
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -47,6 +47,8 @@ TextureImporter:
     heightScale: 0.25
     normalMapFilter: 0
   isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -57,7 +59,7 @@ TextureImporter:
     serializedVersion: 2
     filterMode: 0
     aniso: -1
-    mipBias: -1
+    mipBias: -100
     wrapU: 1
     wrapV: 1
     wrapW: 1
@@ -69,7 +71,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 128
+  spritePixelsToUnits: 16
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -104,22 +106,11 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
-  - serializedVersion: 2
-    buildTarget: Android
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 0
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: explosjon3_0
+      name: ExplosionValla_0
       rect:
         serializedVersion: 2
         x: 21
@@ -127,19 +118,19 @@ TextureImporter:
         width: 75
         height: 73
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 11a15244d16866c449533438e3382685
+      spriteID: f1432f33fc65e2d4088d54a858e209ff
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: explosjon3_1
+      name: ExplosionValla_1
       rect:
         serializedVersion: 2
         x: 79
@@ -147,39 +138,39 @@ TextureImporter:
         width: 5
         height: 11
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 283c1cc12c139eb41aa1a82ef8a8bbfd
+      spriteID: ee91258b014d26146b48d5e430d0f561
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: explosjon3_2
+      name: ExplosionValla_2
       rect:
         serializedVersion: 2
         x: 140
-        y: 399
-        width: 99
-        height: 104
+        y: 394
+        width: 96
+        height: 109
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7b4a5e16e21e92d41a71c145dda412b4
+      spriteID: 6b526b3ba28b40b4ebdec68f0243f06c
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: explosjon3_3
+      name: ExplosionValla_3
       rect:
         serializedVersion: 2
         x: 263
@@ -187,19 +178,19 @@ TextureImporter:
         width: 108
         height: 121
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3962f8c1828b3da4abe5b11be1bbf2ae
+      spriteID: f04cf07c1629e124fb3a9bfe43f1bb76
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: explosjon3_4
+      name: ExplosionValla_4
       rect:
         serializedVersion: 2
         x: 391
@@ -207,19 +198,19 @@ TextureImporter:
         width: 113
         height: 119
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ad6f4147c53cf1b41bce4ba423e5a03e
+      spriteID: c9e057338d96e5f40b5911606b06c387
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: explosjon3_5
+      name: ExplosionValla_5
       rect:
         serializedVersion: 2
         x: 30
@@ -227,19 +218,19 @@ TextureImporter:
         width: 8
         height: 10
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cef7ec77f3356594fa424bc69b4d8ce2
+      spriteID: b9e4e86d7d7e23145a9b6ae57f24f36c
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: explosjon3_6
+      name: ExplosionValla_6
       rect:
         serializedVersion: 2
         x: 11
@@ -247,19 +238,19 @@ TextureImporter:
         width: 106
         height: 115
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e8276abb4c055914eb50e071e25db413
+      spriteID: ce7d363d2ea6c49488522832a5ffea23
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: explosjon3_7
+      name: ExplosionValla_7
       rect:
         serializedVersion: 2
         x: 141
@@ -267,19 +258,19 @@ TextureImporter:
         width: 102
         height: 111
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 973d268aa348ed144b61f06d3b4d79cc
+      spriteID: d2b970db02e72a84da94cce29d749fc8
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: explosjon3_8
+      name: ExplosionValla_8
       rect:
         serializedVersion: 2
         x: 206
@@ -287,19 +278,19 @@ TextureImporter:
         width: 4
         height: 7
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 593c3950f78e4e947a45958741704b0b
+      spriteID: d3179fdc614e904478d17261502c6ef2
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: explosjon3_9
+      name: ExplosionValla_9
       rect:
         serializedVersion: 2
         x: 269
@@ -307,39 +298,39 @@ TextureImporter:
         width: 99
         height: 106
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 707671ba332dbe64f92766e32fb55347
+      spriteID: bfaea6d26fb9c574cadbc0d5d76db7e7
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: explosjon3_10
+      name: ExplosionValla_10
       rect:
         serializedVersion: 2
         x: 398
-        y: 279
+        y: 278
         width: 89
         height: 92
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5bdf50b69713a8046a52755143f7e603
+      spriteID: 4ff2c408030f9fc4eaba55f8061a991a
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: explosjon3_11
+      name: ExplosionValla_11
       rect:
         serializedVersion: 2
         x: 479
@@ -347,19 +338,19 @@ TextureImporter:
         width: 12
         height: 9
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6df7e27b7b6040b40bb2357eaff8501a
+      spriteID: cb8f2385dc76a1146964d92c261d2b26
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: explosjon3_12
+      name: ExplosionValla_12
       rect:
         serializedVersion: 2
         x: 12
@@ -367,19 +358,19 @@ TextureImporter:
         width: 11
         height: 13
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e71e2b02776cdeb43ab30a89b42ef547
+      spriteID: eeb62ecb0a80abe4aa4641f07f87cc93
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: explosjon3_13
+      name: ExplosionValla_13
       rect:
         serializedVersion: 2
         x: 141
@@ -387,19 +378,19 @@ TextureImporter:
         width: 9
         height: 9
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1ad7e4d444b2322449f004afe9c81a06
+      spriteID: 97d497e3bd895de459be1065bc84ee60
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: explosjon3_14
+      name: ExplosionValla_14
       rect:
         serializedVersion: 2
         x: 235
@@ -407,19 +398,19 @@ TextureImporter:
         width: 5
         height: 7
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3e91d0a8999011842bc50ced8690c843
+      spriteID: ae8fd938598ca3b4c8cb2f5e1c5c721a
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: explosjon3_15
+      name: ExplosionValla_15
       rect:
         serializedVersion: 2
         x: 27
@@ -427,19 +418,19 @@ TextureImporter:
         width: 76
         height: 88
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6efa736efe9c2fe4c86318069e43ab52
+      spriteID: 4599420d04b20e2449337f0fc74362d8
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: explosjon3_16
+      name: ExplosionValla_16
       rect:
         serializedVersion: 2
         x: 69
@@ -447,19 +438,19 @@ TextureImporter:
         width: 4
         height: 4
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2e753ed251515c04a85de933fa9baa89
+      spriteID: bbaab6aff0735414f8b7162733649dbd
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: explosjon3_17
+      name: ExplosionValla_17
       rect:
         serializedVersion: 2
         x: 15
@@ -467,19 +458,19 @@ TextureImporter:
         width: 7
         height: 5
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0f24198bb9902bf4a9c8c4c45f3ac0db
+      spriteID: db2201ff02c3f1146af76be97ddb70f2
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: explosjon3_18
+      name: ExplosionValla_18
       rect:
         serializedVersion: 2
         x: 24
@@ -487,19 +478,19 @@ TextureImporter:
         width: 5
         height: 6
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2010a10eb3b2d94458bdaaec0a44cd45
+      spriteID: 8891d6c82f231434082e6cc112c1620d
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: explosjon3_19
+      name: ExplosionValla_19
       rect:
         serializedVersion: 2
         x: 93
@@ -507,19 +498,19 @@ TextureImporter:
         width: 4
         height: 8
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 83db309aeb7252d4099ae843079b404c
+      spriteID: 186f3db27d930f04ebd883fc8caaf3c6
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: explosjon3_20
+      name: ExplosionValla_20
       rect:
         serializedVersion: 2
         x: 165
@@ -527,19 +518,19 @@ TextureImporter:
         width: 47
         height: 53
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3a703e215cd95094584dd84391bc308d
+      spriteID: 158975790cda21c4082e3a901cfaac83
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: explosjon3_21
+      name: ExplosionValla_21
       rect:
         serializedVersion: 2
         x: 292
@@ -547,19 +538,19 @@ TextureImporter:
         width: 48
         height: 52
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 82cc5d9c0d0f78140a3fc85dfc7eb3d2
+      spriteID: 79ebc5022170d314cb1594369c76ab71
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: explosjon3_22
+      name: ExplosionValla_22
       rect:
         serializedVersion: 2
         x: 421
@@ -567,19 +558,19 @@ TextureImporter:
         width: 45
         height: 49
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4318a76581b205643a3cbdf9e5800fa4
+      spriteID: 30cf0901acb08f24583493ae56dcb980
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: explosjon3_23
+      name: ExplosionValla_23
       rect:
         serializedVersion: 2
         x: 35
@@ -587,19 +578,19 @@ TextureImporter:
         width: 6
         height: 5
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1d214eb6088116848bdb7055c8d43b42
+      spriteID: a3ee5884720a7cf48870ccf70b3147c4
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: explosjon3_24
+      name: ExplosionValla_24
       rect:
         serializedVersion: 2
         x: 37
@@ -607,19 +598,19 @@ TextureImporter:
         width: 45
         height: 49
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b97d40193b7b761448239ef8adec0dc6
+      spriteID: eedd701b29424a949a17fa01a4f3d4a9
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: explosjon3_25
+      name: ExplosionValla_25
       rect:
         serializedVersion: 2
         x: 164
@@ -627,13 +618,13 @@ TextureImporter:
         width: 45
         height: 49
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c86df426e8f95bd4783f7311126ed8e8
+      spriteID: 32f5172895e825844ac45565fb783932
       vertices: []
       indices: 
       edges: []
@@ -641,12 +632,14 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: e7b7736b4a0926044aa137efd7df5b02
+    spriteID: 8ba337d31a5f4fd4eb59f00a340b6423
     vertices: []
     indices: 
     edges: []
     weights: []
   spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
   userData: 
   assetBundleName: 
   assetBundleVariant: 

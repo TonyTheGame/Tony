@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" tiledversion="1.1.3" orientation="orthogonal" renderorder="left-up" width="50" height="150" tilewidth="16" tileheight="16" infinite="0" nextobjectid="300">
+<map version="1.0" tiledversion="1.1.3" orientation="orthogonal" renderorder="left-up" width="50" height="150" tilewidth="16" tileheight="16" infinite="0" nextobjectid="301">
  <tileset firstgid="1" source="Template.tsx"/>
  <tileset firstgid="10001" source="Tileset Nivel 2.tsx"/>
  <tileset firstgid="11370" source="TemplateCasas1LadrillosAmarillos.tsx"/>
@@ -2668,7 +2668,7 @@
   <object id="60" x="528.5" y="512.25" width="63.75" height="334.75"/>
   <object id="61" x="592.25" y="511.75" width="207.5" height="143.75"/>
   <object id="62" x="431.25" y="400.25" width="194" height="31.5"/>
-  <object id="63" x="622.25" y="32.5" width="3.25" height="398.75"/>
+  <object id="63" x="622.25" y="32.5" width="3.25" height="207.431"/>
   <object id="64" x="430.25" y="32" width="195.25" height="31.5"/>
   <object id="65" x="430.25" y="32" width="3.75" height="191.75"/>
   <object id="66" x="351" y="192.75" width="83.5" height="30.75"/>
@@ -2700,6 +2700,9 @@
   <object id="92" x="414.545" y="1139.82" width="2.72727" height="11.8182"/>
   <object id="93" x="430.909" y="1139.82" width="2.54545" height="12"/>
   <object id="94" x="446.909" y="1139.82" width="1.45455" height="12.1818"/>
+ </objectgroup>
+ <objectgroup name="BorrarCuandoMuereElBoss">
+  <object id="300" x="622" y="240" width="3.94203" height="159.986"/>
  </objectgroup>
  <objectgroup name="Camiones">
   <object id="95" x="556.667" y="290">

@@ -19,7 +19,7 @@ public class BallBD : MonoBehaviour
         dona = GameObject.FindGameObjectWithTag("Dona");
 
         // Recuperamos posición del jugador y la dirección normalizada
-        Vector3 v = new Vector3(-1, 1);
+        Vector3 v = new Vector3(1, -1);
         dir = v;
     }
 
