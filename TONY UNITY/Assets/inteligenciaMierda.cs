@@ -1,6 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.Assertions;
+using UnityEngine.Playables;
 
 public class inteligenciaMierda : MonoBehaviour
 {
@@ -13,6 +16,9 @@ public class inteligenciaMierda : MonoBehaviour
      public double coolDownTime = 0.5;
     double nextFireTime = 0;
     public static int puntos = 0;
+    float secondsCounter = 0;
+    float secondsToCount = 0.04f;
+    bool couroutineStarted = false;
 
     ///----- Variables relacionadas con el ataque
     [Tooltip("Prefab de la roca que se disparará")]
@@ -37,19 +43,7 @@ public class inteligenciaMierda : MonoBehaviour
     Rigidbody2D rb2d;
     private Vector3 target;
 
-    public int Puntos
-    {
-        get
-        {
-            return puntos;
-        }
-
-        set
-        {
-            puntos = value;
-        }
-    }
-
+   
     void Start()
     {
 
@@ -170,10 +164,20 @@ public class inteligenciaMierda : MonoBehaviour
     public void Attacked()
     {
         anim.SetTrigger("atacado");
-        if (--hp <= 0) Destroy(gameObject);
+        GetComponent<AudioSource>().Play();
+        if (--hp <= 0)
+        {
+           
+           /* secondsCounter += Time.deltaTime;   
+            Debug.Log(secondsCounter);
+            Debug.Log(secondsToCount);*/
+            anim.SetTrigger("muere");
+            Object.Destroy(gameObject, 1f);
+        }
+        
 
     }
-   
+
 
     ///---  Dibujamos las vidas del enemigo en una barra 
     void OnGUI()
@@ -185,7 +189,7 @@ public class inteligenciaMierda : MonoBehaviour
         GUI.Box(
             new Rect(
                 pos.x - 20,                   // posición x de la barra
-                Screen.height - pos.y + 60,   // posición y de la barra
+                Screen.height - pos.y - 60,   // posición y de la barra
                 40,                           // anchura de la barra    
                 24                            // altura de la barra  
             ),hp + "/" + maxHp               // texto de la barra

@@ -21,10 +21,12 @@ public class Warp : MonoBehaviour
     void OnTriggerEnter2D(Collider2D col)
     {
 
-        // Actualizamos la posición
-        col.transform.position = target.transform.position;
+        if (col.transform.tag == "Player") {
+            col.transform.position = target.transform.position;
 
-        Camera.main.GetComponent<MainCamera>().SetBound(targetMap);
+            Camera.main.GetComponent<MainCamera>().SetBound(targetMap);
+        }
+   
 
     }
 

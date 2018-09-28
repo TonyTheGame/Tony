@@ -134,11 +134,13 @@ public class inteligenciaSalchicha2 : MonoBehaviour
     public void Attacked()
     {
         anim.SetTrigger("atacado");
+        GetComponent<AudioSource>().Play();
 
         if (--hp <= 0)
         {
-            Destroy(gameObject);
-          
+            anim.SetTrigger("muere");
+            Object.Destroy(gameObject, 1f);
+
         }
 
     }
@@ -154,7 +156,7 @@ public class inteligenciaSalchicha2 : MonoBehaviour
         GUI.Box(
             new Rect(
                 pos.x - 20,                   // posición x de la barra
-                Screen.height - pos.y + 60,   // posición y de la barra
+                Screen.height - pos.y - 60,   // posición y de la barra
                 40,                           // anchura de la barra    
                 24                            // altura de la barra  
             ), hp + "/" + maxHp               // texto de la barra
