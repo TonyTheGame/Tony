@@ -76,6 +76,7 @@ html, body {
 
 #main {
   padding-top: 100px;
+  height: 100%;
 }
 
 #presentacion 
@@ -92,7 +93,7 @@ html, body {
 
 #desc {
   width: 100%;
-  margin: 600px auto 0;
+  margin: auto 0;
   
   /*background: #fff;*/
 }
@@ -112,9 +113,6 @@ html, body {
   width: 97.5%;
 }
 
-<<<<<<< HEAD
-/*JUEGO*/
-/*tony*/
 #tonyd{
     background-color: #4484FF;
     height:570px;
@@ -162,6 +160,8 @@ html, body {
     font-size: 15px;
     width:40%;
 }
-=======
-/*div > video { position: fixed !important; }*/
->>>>>>> 90215c94de07fcfc52175264680bef8d9ca030a3
+
+#video{ 
+	height: 100%;
+	width: 100%;
+}
