@@ -157,10 +157,21 @@ public class InteligenciaPollo : MonoBehaviour {
     public void Attacked()
     {
 
-        if (--hp <= 0) Destroy(gameObject);
+        anim.SetTrigger("atacado");
+        Debug.Log(hp);
+        GetComponent<AudioSource>().Play();
+        if (--hp <= 0)
+        {
+
+            /* secondsCounter += Time.deltaTime;   
+             Debug.Log(secondsCounter);
+             Debug.Log(secondsToCount);*/
+            anim.SetTrigger("muere");
+            Object.Destroy(gameObject, 1f);
+        }
 
     }
-
+   
 
     ///---  Dibujamos las vidas del enemigo en una barra 
     void OnGUI()

@@ -134,14 +134,17 @@ public class inteligenciaPata : MonoBehaviour {
     }
     public void Attacked()
     {
-        Debug.Log("atacado");
-
+        anim.SetTrigger("atacado");
+        GetComponent<AudioSource>().Play();
         if (--hp <= 0)
         {
-            Destroy(gameObject);
-            Debug.Log("recibe daño");
-        }
 
+            /* secondsCounter += Time.deltaTime;   
+             Debug.Log(secondsCounter);
+             Debug.Log(secondsToCount);*/
+            anim.SetTrigger("muere");
+            Object.Destroy(gameObject, 1f);
+        }
     }
 
 

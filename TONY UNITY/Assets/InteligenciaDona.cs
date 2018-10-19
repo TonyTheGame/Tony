@@ -213,8 +213,17 @@ public class InteligenciaDona : MonoBehaviour
     }
     public void Attacked()
     {
+        anim.SetTrigger("atacado");
+        GetComponent<AudioSource>().Play();
+        if (--hp <= 0)
+        {
 
-        if (--hp <= 0) Destroy(gameObject);
+            /* secondsCounter += Time.deltaTime;   
+             Debug.Log(secondsCounter);
+             Debug.Log(secondsToCount);*/
+            anim.SetTrigger("muere");
+            Object.Destroy(gameObject, 1f);
+        }
 
     }
 

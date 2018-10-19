@@ -53,6 +53,7 @@ public class movimiento : MonoBehaviour
         MeleeAttack();
         PreventMovement();
         ADCAttack();
+        Corre();
 
 
     }
@@ -108,6 +109,17 @@ public class movimiento : MonoBehaviour
             else attackCollider.enabled = false;
         }
      
+    }
+    public void Corre()
+    {
+        if (Input.GetKeyDown(KeyCode.LeftShift))
+        {
+            speed = 6f;
+        }
+        if (Input.GetKeyUp(KeyCode.LeftShift))
+        {
+            speed = 4f;
+        }
     }
     void ADCAttack()
     {
