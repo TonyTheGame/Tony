@@ -23,8 +23,9 @@ public class DestruccionCamion : MonoBehaviour {
         if (GameController.Score==puntajeMinimo)
         {
             secondsCounter += Time.deltaTime;
-
+             GetComponent<AudioSource>().Play();
             anim.SetTrigger("destruido");
+           
 
             if (secondsCounter >= secondsToCount)
             {

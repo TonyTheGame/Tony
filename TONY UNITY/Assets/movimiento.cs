@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Assertions;
-
+using UnityEngine.Playables;
 public class movimiento : MonoBehaviour
 {
     public float speed = 4f;
@@ -77,6 +77,7 @@ public class movimiento : MonoBehaviour
             anim.SetFloat("movX", mov.x);
             anim.SetFloat("movY", mov.y);
             anim.SetBool("caminar", true);
+          
         }
         else
         {
@@ -118,6 +119,7 @@ public class movimiento : MonoBehaviour
         {
             if (Time.time > nextFireTime)
             {
+                GetComponent<AudioSource>().Play();
                 anim.SetTrigger("atacando");
 
             // Para que se mueva desde el principio tenemos que asignar un
@@ -171,19 +173,12 @@ public class movimiento : MonoBehaviour
         GUI.Box(
             new Rect(
                 pos.x - 20,                   // posición x de la barra
-                Screen.height - pos.y + 60,   // posición y de la barra
+                Screen.height - pos.y - 60,   // posición y de la barra
                 40,                           // anchura de la barra    
                 24                            // altura de la barra  
             ), hp + "/" + maxHp               // texto de la barra
         );
-       /* GUI.Box(
-            new Rect(
-                pos.x - 100,                   // posición x de la barra
-                Screen.height - pos.y + 200,   // posición y de la barra
-                80,                           // anchura de la barra    
-                30                            // altura de la barra  
-            ), "puntos"                // texto de la barra
-        );*/
+
     }
   
     
