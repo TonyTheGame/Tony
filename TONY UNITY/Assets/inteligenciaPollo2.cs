@@ -157,7 +157,17 @@ public class inteligenciaPollo2 : MonoBehaviour {
     public void Attacked()
     {
 
-        if (--hp <= 0) Destroy(gameObject);
+        anim.SetTrigger("atacado");
+        GetComponent<AudioSource>().Play();
+        if (--hp <= 0)
+        {
+
+            /* secondsCounter += Time.deltaTime;   
+             Debug.Log(secondsCounter);
+             Debug.Log(secondsToCount);*/
+            anim.SetTrigger("muere");
+            Object.Destroy(gameObject, 1f);
+        }
 
     }
 
