@@ -39,7 +39,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1840635742951932}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 100.647385, y: -193.19748, z: 0}
+  m_LocalPosition: {x: 97.186356, y: -189.16753, z: 0}
   m_LocalScale: {x: 1.486, y: 1.486, z: 1.486}
   m_Children: []
   m_Father: {fileID: 0}
@@ -121,7 +121,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 7e04f3cac81ef4a49a6576f08d3cf953, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -238,10 +238,10 @@ MonoBehaviour:
   visionRadius: 6
   attackRadius: 3
   speed: 4
-  coolDownTime: 0.1
+  coolDownTime: 0.3
   rockPrefab: {fileID: 1763389120898086, guid: 1077e0137613d364fb52cf2b4af6112d, type: 2}
   attackSpeed: 0
-  maxHp: 3
+  maxHp: 7
   hp: 0
 --- !u!212 &212221357481634212
 SpriteRenderer:

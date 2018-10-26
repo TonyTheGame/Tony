@@ -40,7 +40,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1209248231905326}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 421.99997, y: -234.20001, z: 0}
+  m_LocalPosition: {x: 103, y: -189.47, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -228,7 +228,7 @@ MonoBehaviour:
   visionRadius: 5
   attackRadius: 3
   speed: 3
-  coolDownTime: 0.5
+  coolDownTime: 1
   Billete: {fileID: 1789264600375248, guid: a68f09d780f6079478fb30a0fceb6fce, type: 2}
   attackSpeed: 10
   maxHp: 4

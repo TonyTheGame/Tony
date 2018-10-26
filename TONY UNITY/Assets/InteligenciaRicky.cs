@@ -179,7 +179,7 @@ public class InteligenciaRicky : MonoBehaviour
              Debug.Log(secondsCounter);
              Debug.Log(secondsToCount);*/
             anim.SetTrigger("muerto");
-            Object.Destroy(gameObject, 1f);
+            Object.Destroy(gameObject,1f);
         }
 
     }

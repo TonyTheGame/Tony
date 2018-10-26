@@ -39,7 +39,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1037449460823178}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 98.29465, y: -191.45862, z: 0}
+  m_LocalPosition: {x: 90.125755, y: -185.72775, z: 0}
   m_LocalScale: {x: 1.4988425, y: 1.4988425, z: 1.4988425}
   m_Children: []
   m_Father: {fileID: 0}
@@ -230,7 +230,7 @@ MonoBehaviour:
   coolDownTime: 0.5
   rockPrefab: {fileID: 1150542343552782, guid: 59a4764fba7b8ea438cb1f5fcecb0b6a, type: 2}
   attackSpeed: 10
-  maxHp: 3
+  maxHp: 7
   hp: 0
 --- !u!212 &212034059100239886
 SpriteRenderer:

@@ -18,7 +18,13 @@ public class movimiento : MonoBehaviour
     bool shootPrevent;
     double coolDownTime = 0.8;
     double nextFireTime = 0;
-     public GameObject initialMap;
+    public GameObject initialMap;
+    public GameObject respawn;
+    bool muerto = false;
+    //prueba
+    float secondsCounter = 0;
+    double secondsToCount = 3f;
+    //prueba
 
     [Tooltip("Puntos de vida")]
     public int maxHp = 10;
@@ -26,9 +32,9 @@ public class movimiento : MonoBehaviour
     public int hp;
 
     void Awake()
-       {
-           Assert.IsNotNull(initialMap);
-       }
+    {
+        Assert.IsNotNull(initialMap);
+    }
 
     void Start()
     {
@@ -41,8 +47,8 @@ public class movimiento : MonoBehaviour
         // Lo desactivamos desde el principio, luego
         attackCollider.enabled = false;
 
-          Camera.main.GetComponent<MainCamera>().SetBound(initialMap);
-          hp = maxHp;
+        Camera.main.GetComponent<MainCamera>().SetBound(initialMap);
+        hp = maxHp;
     }
 
     void Update()
@@ -54,7 +60,21 @@ public class movimiento : MonoBehaviour
         PreventMovement();
         ADCAttack();
         Corre();
+        if(muerto)
+        {
+            secondsCounter += Time.deltaTime;
+            Debug.Log(secondsCounter);
+            if (secondsCounter >= secondsToCount)
+            {
 
+                Application.LoadLevel(0);
+                secondsCounter = 0;
+                GameController.Score = 0;
+                muerto = false;
+              
+
+            }
+        }
 
     }
 
@@ -78,7 +98,7 @@ public class movimiento : MonoBehaviour
             anim.SetFloat("movX", mov.x);
             anim.SetFloat("movY", mov.y);
             anim.SetBool("caminar", true);
-          
+
         }
         else
         {
@@ -108,7 +128,7 @@ public class movimiento : MonoBehaviour
             if (playbackTime > 2 && playbackTime < 3) attackCollider.enabled = true;
             else attackCollider.enabled = false;
         }
-     
+
     }
     public void Corre()
     {
@@ -126,37 +146,41 @@ public class movimiento : MonoBehaviour
         AnimatorStateInfo stateInfo = anim.GetCurrentAnimatorStateInfo(0);
         bool loading = stateInfo.IsName("tony_poder");
 
-        
+
         if (Input.GetKeyDown(KeyCode.LeftAlt))
         {
-            if (Time.time > nextFireTime)
+            if (hp > 0)
             {
-                GetComponent<AudioSource>().Play();
-                anim.SetTrigger("atacando");
 
-            // Para que se mueva desde el principio tenemos que asignar un
-            // valor inicial al movX o movY en el edtitor distinto a cero
-            float angle = Mathf.Atan2(
-                anim.GetFloat("movY"),
-                anim.GetFloat("movX")
-            ) * Mathf.Rad2Deg;
 
-            GameObject slashObj = Instantiate(
-                bananaPrefab, transform.position,
-                Quaternion.AngleAxis(angle, Vector3.forward)
-            );
+                if (Time.time > nextFireTime)
+                {
+                    GetComponent<AudioSource>().Play();
+                    anim.SetTrigger("atacando");
 
-            Slash slash = slashObj.GetComponent<Slash>();
-            slash.mov.x = anim.GetFloat("movX");
-            slash.mov.y = anim.GetFloat("movY");
-            nextFireTime = Time.time + coolDownTime;
-                
+                    // Para que se mueva desde el principio tenemos que asignar un
+                    // valor inicial al movX o movY en el edtitor distinto a cero
+                    float angle = Mathf.Atan2(
+                        anim.GetFloat("movY"),
+                        anim.GetFloat("movX")
+                    ) * Mathf.Rad2Deg;
+
+                    GameObject slashObj = Instantiate(
+                        bananaPrefab, transform.position,
+                        Quaternion.AngleAxis(angle, Vector3.forward)
+                    );
+
+                    Slash slash = slashObj.GetComponent<Slash>();
+                    slash.mov.x = anim.GetFloat("movX");
+                    slash.mov.y = anim.GetFloat("movY");
+                    nextFireTime = Time.time + coolDownTime;
+
+                }
             }
-              
         }
 
-        }
-            
+    }
+
     void PreventMovement()
     {
         if (movePrevent)
@@ -171,9 +195,27 @@ public class movimiento : MonoBehaviour
     }
     public void Attacked()
     {
-        if (--hp <= 0) Destroy(gameObject);
+        if (--hp <= 0)
+        {
+            hp = 0;
+            anim.SetTrigger("muerto");
+            muerto = true;
+            speed = 0f;
+            
+
+
+        }
 
     }
+    public bool Muerto()
+    {
+        if (hp == 0)
+        {
+            return true;
+        }
+        return false;
+    }
+
 
     ///---  Dibujamos las vidas del enemigo en una barra 
     void OnGUI()
