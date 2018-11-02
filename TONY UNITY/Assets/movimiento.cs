@@ -4,6 +4,8 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Assertions;
 using UnityEngine.Playables;
+using UnityEngine.SceneManagement;
+
 public class movimiento : MonoBehaviour
 {
     public float speed = 4f;
@@ -22,10 +24,13 @@ public class movimiento : MonoBehaviour
     public GameObject respawn;
     bool muerto = false;
     //prueba
+    int flag = 0;
     float secondsCounter = 0;
     double secondsToCount = 3f;
+    float secondsCounter2 = 0;
+    double secondsToCount2 = 3f;
     //prueba
-
+    int contador;
     [Tooltip("Puntos de vida")]
     public int maxHp = 10;
     [Tooltip("Vida actual")]
@@ -38,6 +43,7 @@ public class movimiento : MonoBehaviour
 
     void Start()
     {
+        contador = 3;
         anim = GetComponent<Animator>();
         rb2d = GetComponent<Rigidbody2D>();
 
@@ -49,10 +55,13 @@ public class movimiento : MonoBehaviour
 
         Camera.main.GetComponent<MainCamera>().SetBound(initialMap);
         hp = maxHp;
+
+        GameController.Score = 0;
     }
 
     void Update()
     {
+
 
         Movements();
         Animations();
@@ -60,23 +69,43 @@ public class movimiento : MonoBehaviour
         PreventMovement();
         ADCAttack();
         Corre();
-        if(muerto)
+        if (muerto)
         {
-            secondsCounter += Time.deltaTime;
-            Debug.Log(secondsCounter);
-            if (secondsCounter >= secondsToCount)
+            
+            secondsCounter2 += Time.deltaTime;
+            if (contador > 0)
             {
+                if (secondsCounter2 >= secondsToCount2)
+                {
+                    Debug.Log("entro la piroquiña");
+                    muerto = false;
+                    hp = maxHp;
+                     anim.SetBool("muerto", false);
 
-                Application.LoadLevel(0);
-                secondsCounter = 0;
-                GameController.Score = 0;
-                muerto = false;
-              
-
+                    secondsCounter2 = 0;
+                    speed = 4f;
+                    contador--;
+                }
             }
-        }
+            else
+            {
+                secondsCounter += Time.deltaTime;
+                if (secondsCounter >= secondsToCount)
+                {
 
-    }
+                    SceneManager.LoadScene(0);
+                    secondsCounter = 0;
+                    GameController.Score = 0;
+                    muerto = false;
+
+
+                }
+            }
+              
+                   
+            
+        }
+    } 
 
     void FixedUpdate()
     {
@@ -198,7 +227,7 @@ public class movimiento : MonoBehaviour
         if (--hp <= 0)
         {
             hp = 0;
-            anim.SetTrigger("muerto");
+            anim.SetBool("muerto",true);
             muerto = true;
             speed = 0f;
             
