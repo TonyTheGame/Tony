@@ -16094,7 +16094,7 @@ MonoBehaviour:
     type: 2}
   initialMap: {fileID: 1092412591}
   respawn: {fileID: 1203868911}
-  maxHp: 2
+  maxHp: 100
   hp: 0
 --- !u!212 &1755118625
 SpriteRenderer:
