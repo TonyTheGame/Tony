@@ -247,7 +247,7 @@ public class movimiento : MonoBehaviour
 
 
     ///---  Dibujamos las vidas del enemigo en una barra 
-    void OnGUI()
+  /*  void OnGUI()
     {
         // Guardamos la posición del enemigo en el mundo respecto a la cámara
         Vector2 pos = Camera.main.WorldToScreenPoint(transform.position);
@@ -263,6 +263,6 @@ public class movimiento : MonoBehaviour
         );
 
     }
-  
+  */
     
 }
