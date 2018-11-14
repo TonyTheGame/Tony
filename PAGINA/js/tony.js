@@ -35,6 +35,8 @@ $(document).ready(function() {
 	$("body").vide('video.mp4');
 });
 
+
+
 /*window.onscroll = function() {myFunction()};
 var header = document.getElementById("header");
 var sticky = header.offsetTop;
