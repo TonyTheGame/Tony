@@ -30,7 +30,7 @@ public class movimiento : MonoBehaviour
     float secondsCounter2 = 0;
     double secondsToCount2 = 3f;
     //prueba
-    int contador;
+   public static int contador;
     [Tooltip("Puntos de vida")]
     public int maxHp = 10;
     [Tooltip("Vida actual")]
@@ -43,7 +43,7 @@ public class movimiento : MonoBehaviour
 
     void Start()
     {
-        contador = 3;
+   contador = 5;
         anim = GetComponent<Animator>();
         rb2d = GetComponent<Rigidbody2D>();
 
@@ -153,6 +153,7 @@ public class movimiento : MonoBehaviour
         // Activamos el collider a la mitad de la animación de ataque
         if (attacking)
         {
+            Debug.Log("ENTRE");
             float playbackTime = stateInfo.normalizedTime;
             if (playbackTime > 2 && playbackTime < 3) attackCollider.enabled = true;
             else attackCollider.enabled = false;

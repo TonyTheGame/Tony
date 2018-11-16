@@ -2044,36 +2044,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 206837067}
   m_Mesh: {fileID: 4300000, guid: 3782784e0a6b8fe47ab770f1f988c8fa, type: 3}
---- !u!1 &214001057 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1350992204206278, guid: 40b13fd0878c4fc4d9c38c6bdc4c661c,
-    type: 2}
-  m_PrefabInternal: {fileID: 982650860}
---- !u!61 &214001062
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 214001057}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 16.40805, y: -90.81253}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 9.419312, y: 7.0398865}
-  m_EdgeRadius: 0
 --- !u!1 &214916037
 GameObject:
   m_ObjectHideFlags: 0
@@ -3218,6 +3188,52 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Offset: {x: 0, y: 0}
+--- !u!1 &289888711
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 289888713}
+  - component: {fileID: 289888712}
+  m_Layer: 0
+  m_Name: ControllerVida
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &289888712
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 289888711}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 677b2e5553d51f44ba970dfa95a47181, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vida5: {fileID: 21300000, guid: 7097b03d2b526df4881eca214f81662f, type: 3}
+  vida4: {fileID: 21300000, guid: 1eb7b4196abcfcd4794137e78469558e, type: 3}
+  vida3: {fileID: 21300000, guid: f9429a38e1a0d4042ba0d14deeb66a2e, type: 3}
+  vida2: {fileID: 21300000, guid: f624169b24e7e1b4ba35845130a2392c, type: 3}
+  vida1: {fileID: 21300000, guid: a43fa34cf1787de48a6060de1255c153, type: 3}
+  imagenActual: {fileID: 2011246253}
+--- !u!4 &289888713
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 289888711}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 221.08858, y: -190.66376, z: -0.68071264}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 51
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &291028973
 GameObject:
   m_ObjectHideFlags: 0
@@ -5304,7 +5320,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 609365939}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 194.3, y: -210.8, z: 0}
+  m_LocalPosition: {x: 178.38, y: -185.82, z: 0}
   m_LocalScale: {x: 0.068567365, y: 0.060888186, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -7312,11 +7328,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4917997847480226, guid: f6a8ca040b40fbc47b69a26a4f69b402, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 179.01
+      value: 179
       objectReference: {fileID: 0}
     - target: {fileID: 4917997847480226, guid: f6a8ca040b40fbc47b69a26a4f69b402, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -183.51
+      value: -177.66
       objectReference: {fileID: 0}
     - target: {fileID: 4917997847480226, guid: f6a8ca040b40fbc47b69a26a4f69b402, type: 2}
       propertyPath: m_LocalPosition.z
@@ -16094,7 +16110,7 @@ MonoBehaviour:
     type: 2}
   initialMap: {fileID: 1092412591}
   respawn: {fileID: 1203868911}
-  maxHp: 100
+  maxHp: 10
   hp: 0
 --- !u!212 &1755118625
 SpriteRenderer:
@@ -18428,7 +18444,7 @@ GameObject:
   - component: {fileID: 2011246254}
   - component: {fileID: 2011246253}
   m_Layer: 5
-  m_Name: Image
+  m_Name: ImagenVida
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -18449,8 +18465,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 223.9, y: -64}
-  m_SizeDelta: {x: 218.33, y: 70}
+  m_AnchoredPosition: {x: 188.4, y: -57}
+  m_SizeDelta: {x: 285.3, y: 75.1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2011246253
 MonoBehaviour:
