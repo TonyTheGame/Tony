@@ -153,7 +153,7 @@ public class movimiento : MonoBehaviour
         // Activamos el collider a la mitad de la animación de ataque
         if (attacking)
         {
-            Debug.Log("ENTRE");
+         
             float playbackTime = stateInfo.normalizedTime;
             if (playbackTime > 2 && playbackTime < 3) attackCollider.enabled = true;
             else attackCollider.enabled = false;
